@@ -38,7 +38,7 @@ class CartPole():
         self.Q[state_old][action] += alpha * (reward + self.gamma * np.max(self.Q[state_new]) - self.Q[state_old][action])
 
     # Adaptive learning of Exploration Rate
-    def get_epsilon(self, t):-
+    def get_epsilon(self, t):
         return max(self.min_epsilon, min(1, 1.0 - math.log10((t + 1) / self.ada_divisor)))
 
     # Adaptive learning of Learning Rate
